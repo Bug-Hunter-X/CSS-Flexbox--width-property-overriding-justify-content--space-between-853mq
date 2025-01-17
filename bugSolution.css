@@ -1,0 +1,13 @@
+To solve this, avoid using fixed width percentages when `justify-content: space-between` is used for flexible width distribution. Instead, use `flex-grow` to allow items to distribute available space proportionally.
+
+```css
+div {
+  display: flex;
+  justify-content: space-between;
+}
+div > * {
+  flex-grow: 1;
+}
+```
+
+This revised CSS ensures that the child elements will take up equal space between each other while respecting the content width of each element. If you need minimum widths, use `min-width` instead of fixed percentages.
