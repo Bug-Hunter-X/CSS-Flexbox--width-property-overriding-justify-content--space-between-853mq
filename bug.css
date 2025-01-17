@@ -1,0 +1,13 @@
+The following CSS rule creates an unexpected layout:
+
+```css
+div {
+  display: flex;
+  justify-content: space-between;
+}
+div > * {
+  width: 50%;
+}
+```
+
+This might seem like it should make two child elements equally divide the space, but if the child elements have content that causes them to overflow (e.g., long text), the `width: 50%;` rule overrides the `justify-content: space-between` causing the elements to stack vertically or unexpectedly overlap, due to the calculation of 50% width overriding the space-between distribution.
